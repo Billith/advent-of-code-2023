@@ -11,22 +11,22 @@ def solve(input: str) -> int:
             dest, source, r = [int(n) for n in line.split()]
             
             for x, seed in enumerate(seeds):
-                print(f'checking seed "{seed[-1]}" for line "{line}" - seeds {seeds}')
+                # print(f'checking seed "{seed[-1]}" for line "{line}" - seeds {seeds}')
 
                 if len(seed) >= i+2:
                     continue
 
                 if seed[-1] >= source and seed[-1] < (source + r):
                     seed.append(dest + seed[-1] - source)
-                    print(f'append #1 ({x}) seed {seed}: {dest + seed[-1] - source}')
+                    # print(f'append #1 ({x}) seed {seed}: {dest + seed[-1] - source}')
         
         for seed in seeds:
             if len(seed) < i+2:
                 seed.append(seed[-1])
-                print(f'append #2 seed {seed}: {seed[-1]}')
+                # print(f'append #2 seed {seed}: {seed[-1]}')
 
-        print(seeds)
-        print(f'-- finished processing map #{i} --')
+        # print(seeds)
+        # print(f'-- finished processing map #{i} --')
 
     return min([s[-1] for s in seeds])
 
