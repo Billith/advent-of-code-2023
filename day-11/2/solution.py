@@ -23,9 +23,9 @@ def solve(puzzle: str, extrapolation_val: int) -> int:
     
     all_galaxies_pairs = list(combinations(galaxies, 2))
     paths_lengths = []
-    # since passing through each extrapolated row and column is now worth 1m field
+    # since passing through each extrapolated row and column is now worth 1m fields
     # we need to subtract 1 each time, since in the calculation of path length those
-    # fields are already counted in the path length as 1
+    # fields are already counted in as 1
     extrapolation_val -= 1
 
     for first_galaxy, second_galaxy in all_galaxies_pairs:
